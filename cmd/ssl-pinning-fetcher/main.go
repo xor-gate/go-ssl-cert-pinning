@@ -48,6 +48,10 @@ func main() {
 		hashHex := hex.EncodeToString(hash[:])
 
 		// Print the base64 encoded hash
+		subjectCommonName := cert.Subject.CommonName
+		issuerOrganization := cert.Issuer.Organization
+		fmt.Println("CN", subjectCommonName)
+		fmt.Println("Issuer O", issuerOrganization)
 		fmt.Println("Base64 encoded SHA-256 hash of the certificate:", hashBase64)
 		fmt.Println("Hex encoded SHA-256 hash of the certificate:", hashHex)
 	}
